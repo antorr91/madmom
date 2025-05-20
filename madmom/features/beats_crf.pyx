@@ -23,7 +23,8 @@ from scipy.ndimage import correlate1d
 cimport numpy as np
 cimport cython
 
-from numpy.math cimport INFINITY
+cdef double INFINITY = 1e20  # or use float('inf') in Python space
+
 
 
 def initial_distribution(num_states, interval):
