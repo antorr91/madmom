@@ -36,14 +36,14 @@ include_dirs = [np.get_include()]
 #     ),
 # ]
 
-extensions = cythonize([
-    Extension(
-        'madmom.audio.ml.hmm',
-        ['madmom/ml/hmm.pyx'],
-        include_dirs=include_dirs,
-    ),
+# extensions = cythonize([
+#     Extension(
+#         'madmom.audio.ml.hmm',
+#         ['madmom/ml/hmm.pyx'],
+#         include_dirs=include_dirs,
+#     ),
 
-])
+# ])
 
 # define scripts to be installed by the PyPI package
 scripts = glob.glob('bin/*')
@@ -105,7 +105,7 @@ setup(
     license='BSD, CC BY-NC-SA',
     packages=find_packages(exclude=['tests', 'docs']),
     # ext_modules=cythonize(extensions),
-    ext_modules = extensions,
+    ext_modules = [],
     package_data={'madmom': package_data},
     exclude_package_data={'': ['tests', 'docs']},
     scripts=scripts,
