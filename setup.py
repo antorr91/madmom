@@ -36,7 +36,14 @@ include_dirs = [np.get_include()]
 #     ),
 # ]
 
-extensions = []
+extensions = cythonize([
+    Extension(
+        'madmom.audio.ml.hmm',
+        ['madmom/ml/hmm.pyx'],
+        include_dirs=include_dirs,
+    ),
+
+]
 
 # define scripts to be installed by the PyPI package
 scripts = glob.glob('bin/*')
