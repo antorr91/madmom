@@ -105,7 +105,7 @@ setup(
     license='BSD, CC BY-NC-SA',
     packages=find_packages(exclude=['tests', 'docs']),
     # ext_modules=cythonize(extensions),
-    ext_modules = [],
+    ext_modules = extensions,
     package_data={'madmom': package_data},
     exclude_package_data={'': ['tests', 'docs']},
     scripts=scripts,
