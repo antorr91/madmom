@@ -43,7 +43,7 @@ extensions = cythonize([
         include_dirs=include_dirs,
     ),
 
-]
+])
 
 # define scripts to be installed by the PyPI package
 scripts = glob.glob('bin/*')
