@@ -19,22 +19,24 @@ version = '0.17.dev0'
 # define which extensions to compile
 include_dirs = [np.get_include()]
 
-extensions = [
-    Extension(
-        'madmom.audio.comb_filters',
-        ['madmom/audio/comb_filters.pyx'],
-        include_dirs=include_dirs,
-    ),
-    Extension(
-        'madmom.features.beats_crf',
-        ['madmom/features/beats_crf.pyx'],
-        include_dirs=include_dirs,
-    ),
-    Extension('madmom.ml.hmm', ['madmom/ml/hmm.pyx'], include_dirs=include_dirs),
-    Extension(
-        'madmom.ml.nn.layers', ['madmom/ml/nn/layers.py'], include_dirs=include_dirs
-    ),
-]
+# extensions = [
+#     Extension(
+#         'madmom.audio.comb_filters',
+#         ['madmom/audio/comb_filters.pyx'],
+#         include_dirs=include_dirs,
+#     ),
+#     Extension(
+#         'madmom.features.beats_crf',
+#         ['madmom/features/beats_crf.pyx'],
+#         include_dirs=include_dirs,
+#     ),
+#     Extension('madmom.ml.hmm', ['madmom/ml/hmm.pyx'], include_dirs=include_dirs),
+#     Extension(
+#         'madmom.ml.nn.layers', ['madmom/ml/nn/layers.py'], include_dirs=include_dirs
+#     ),
+# ]
+
+extensions = []
 
 # define scripts to be installed by the PyPI package
 scripts = glob.glob('bin/*')
@@ -95,7 +97,8 @@ setup(
     url='https://github.com/CPJKU/madmom',
     license='BSD, CC BY-NC-SA',
     packages=find_packages(exclude=['tests', 'docs']),
-    ext_modules=cythonize(extensions),
+    # ext_modules=cythonize(extensions),
+    ext_modules = [],
     package_data={'madmom': package_data},
     exclude_package_data={'': ['tests', 'docs']},
     scripts=scripts,
